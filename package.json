@@ -21,14 +21,17 @@
     "grammar-gen": "npm run grammar-boolean-expr",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-electron\"",
     "dev-server": "node -r babel-register tools/server.jsx",
-    "dev-electron": "HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill tools/main.development",
+    "dev-electron": "set HOT=1&&set NODE_ENV=development&&electron -r babel-register -r babel-polyfill tools/main.development",
     "package": "NODE_ENV=production node -r babel-register tools/package.builder.jsx"
   },
   "build": {
     "appId": "org.neotree.NeoTreeEditor",
-    "mac" : {
+    "mac": {
       "category": "public.app-category.medical",
-      "target" : ["dmg", "zip"]
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "asar": false,
     "productName": "neotree",
